@@ -1,0 +1,68 @@
+{
+  "name": "gatsby-starter-default",
+  "private": true,
+  "description": "A simple starter to get up and developing quickly with Gatsby",
+  "version": "0.1.0",
+  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "dependencies": {
+    "gatsby": "^3.2.1",
+    "gatsby-plugin-gatsby-cloud": "^2.2.0",
+    "gatsby-plugin-image": "^1.2.0",
+    "gatsby-plugin-manifest": "^3.2.0",
+    "gatsby-plugin-offline": "^4.2.0",
+    "gatsby-plugin-react-helmet": "^4.2.0",
+    "gatsby-plugin-react-svg": "^3.0.1",
+    "gatsby-plugin-sass": "^4.2.0",
+    "gatsby-plugin-sharp": "^3.2.0",
+    "gatsby-source-filesystem": "^3.2.0",
+    "gatsby-transformer-sharp": "^3.2.0",
+    "html-webpack-plugin": "^5.3.1",
+    "prop-types": "^15.7.2",
+    "rc-textarea": "^0.3.4",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "react-helmet": "^6.1.0",
+    "react-photoswipe": "^1.3.0",
+    "sass": "^1.32.8"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.13.15",
+    "@storybook/addon-actions": "^6.2.7",
+    "@storybook/addon-essentials": "^6.2.7",
+    "@storybook/addon-knobs": "^5.3.21",
+    "@storybook/addon-links": "^6.2.7",
+    "@storybook/addon-ondevice-actions": "^5.3.23",
+    "@storybook/addon-ondevice-knobs": "^5.3.25",
+    "@storybook/react": "^6.2.7",
+    "@storybook/react-native": "^5.3.25",
+    "@storybook/react-native-server": "^5.3.23",
+    "babel-loader": "^8.2.2",
+    "babel-preset-react-app": "^10.0.0",
+    "node-sass": "^5.0.0",
+    "prettier": "2.2.1",
+    "sass-loader": "^11.0.1",
+    "webpack": "^5.31.0"
+  },
+  "keywords": [
+    "gatsby"
+  ],
+  "license": "0BSD",
+  "scripts": {
+    "build": "gatsby build",
+    "develop": "gatsby develop",
+    "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
+    "start": "npm run develop",
+    "serve": "gatsby serve",
+    "clean": "gatsby clean",
+    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gatsbyjs/gatsby-starter-default"
+  },
+  "bugs": {
+    "url": "https://github.com/gatsbyjs/gatsby/issues"
+  }
+}

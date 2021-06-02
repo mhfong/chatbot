@@ -1,0 +1,628 @@
+
+body, main
+    height: 100%
+    height: 100vh
+    height: calc(var(--vh, 1vh) * 100)
+    margin: 0
+
+#asanga-chatbot
+    height: 100%
+    width: 100%
+    margin: auto
+
+
+.asanga__inner 
+    display: flex
+    flex-direction: column
+    position: relative
+    height: 100%
+    width: 100%
+    overflow: hidden
+    align-items: stretch
+
+
+.asanga__top 
+    display: flex
+    text-align: center
+    position: relative
+    line-height: 0
+    background-color: #e6f2ff
+    max-height: 40%
+    box-shadow: 0 0 4px #567593
+    z-index: 10
+    /*
+        height: 100px
+      */
+
+
+
+.asanga__bottom 
+    background-color: #d6ebff
+    position: relative
+    padding: 1em 25px
+    /*
+        border-top: 5px solid #000
+        overflow-y: auto
+        overflow-y: overlay
+     */
+    overflow: hidden
+    padding-bottom: 0
+    flex: auto
+    display: flex
+    overflow: hidden
+    align-items: stretch
+
+
+.asanga__avatar 
+    height: 100%
+    min-width: 100px
+    margin: auto
+    display: flex
+    align-items: center
+    min-width: 490px
+    padding: 0 30px
+
+
+.asanga__avatar > :first-child 
+    height: 40px
+    width: 40px
+    margin: 5px 0
+
+
+.asanga__avatar > :nth-child(2) 
+    height: 20px
+    width: 88px
+    margin: 10px 0
+    margin-bottom: 5px
+    margin-left: 2px
+
+
+.asanga__avatar-img 
+    height: 100%
+    user-select: none
+
+
+.asanga__chat 
+    position: relative
+    width: 100%
+    display: flex
+    flex-direction: column
+    max-width: 500px
+    margin-left: auto
+    margin-right: auto
+    align-items: stretch
+
+
+.asanga__avatar-below 
+    display: none
+
+/*
+    @media screen and (min-width:768px)
+        .asanga__chat 
+            max-width: unset
+        
+        .asanga__inner
+            flex-direction: row
+        
+        
+        .asanga__top 
+            max-height: none
+            max-height: unset
+            width: 300px
+            height: 100%
+            flex-direction: column
+        
+        
+        .asanga__avatar
+            height: unset
+            
+        
+        
+        .asanga__avatar-below 
+            display: flex
+            flex: 1
+            border-top: 5px solid #000
+        
+        
+        .asanga__bottom 
+            border-top: none
+            border-left: 5px solid #000
+        
+        
+        span.asanga__reset 
+            left: 0
+    
+
+ */
+.asanga__messages 
+    flex: 1
+    color: rgba(255, 255, 255, 0.5)
+    position: relative
+    width: 100%
+    overflow-y: auto
+    overflow-x: hidden
+
+
+.asanga__input 
+    display: flex
+    margin: 1em 0
+
+
+.asanga__masked_input_hidden 
+    display: none
+
+
+.asanga__textarea, .asanga__masked_input 
+    font-family: 'Trebuchet MS'
+    background: none
+    border: none
+    padding: 0.2em 0.3em
+    outline: none !important
+    resize: none
+    color: rgba(0, 0, 0, 0.7)
+    font-size: 1.2em
+    height: 1.7em
+    margin: 0.3em 0
+    overflow: hidden
+    user-select: none
+    width: 100%
+    margin-bottom: 0.6em
+    border-radius: 6px
+    background: white
+    margin: 0
+    box-shadow: 0px 1px 3px 0px rgba(0,0,0,0.2), 0px 1px 1px 0px rgba(0,0,0,0.14), 0px 2px 1px -1px rgba(0,0,0,0.12)
+
+
+
+
+.asanga__message 
+    clear: both
+    float: left
+    font-family: 'Trebuchet MS'
+    padding: 0.4em 0.8em
+    border-radius: 0 1em 1em 1em 
+    background: white
+    margin: 0.5em 0
+    font-size: 1.0em
+    line-height: 1.4
+    position: relative
+    color: #000
+    white-space: pre-line
+    margin-bottom: 0px
+    max-width: 80%
+    max-width: 200px
+    text-align: left
+    word-break: break-word
+
+
+.asanga__message form 
+    display: flex
+
+
+.asanga__message [id^="captcha"] + input 
+    display: none
+
+
+.asanga__new + .asanga__new, .asanga__send + .asanga__send 
+    border-radius: 1em
+
+.asanga__message:last-child 
+    margin-bottom: 0
+
+.asanga__send 
+    float: right
+    background-color: #fffae7
+
+
+.asanga__new 
+    border-radius: 0 0.5em 0.5em 0.5em
+
+.asanga__send 
+    border-radius: 0.5em 0 0.5em 0.5em
+
+
+
+.asanga__playAudio svg 
+    width: 1.1em
+
+
+.asanga__playAudio 
+    padding: 0.4em
+    margin-left: 0.4em
+    margin-top: -0.2em
+    margin-bottom: -0.2em
+    display: inline-flex
+    float: right
+    border-radius: 100em
+    user-select: none
+    height: 16px
+    width: 16px
+
+.asanga__playAudio:hover 
+    background: #ddd
+
+.asanga__playAudio:active 
+    background: #555a
+
+
+
+.asanga__message.asanga__loading span
+    display: block
+    font-size: 0
+    width: 30px
+    height: 10px
+    position: relative
+
+
+.asanga__message.asanga__loading::before,
+.asanga__message.asanga__loading span::before,
+.asanga__message.asanga__loading span::after 
+    content: ""
+    position: absolute
+    display: block
+    width: 6px
+    height: 6px
+    top: 50%
+    left: 50%
+    z-index: 2
+    background: black
+    border-radius: 50%
+    -webkit-transform: translate(-50%, -50%)
+    transform: translate(-50%, -50%)
+    margin-top: 4px
+    border: none
+
+.asanga__message.asanga__loading::before
+    margin-left: -2px
+    -webkit-animation: ball 0.45s cubic-bezier(0, 0, 0.15, 1) alternate infinite
+    animation: ball 0.45s cubic-bezier(0, 0, 0.15, 1) alternate infinite
+    -webkit-animation-delay: 0.15s
+    animation-delay: 0.15s
+    
+
+
+.asanga__message.asanga__loading span::before 
+    -webkit-animation: ball 0.45s cubic-bezier(0, 0, 0.15, 1) alternate infinite
+    animation: ball 0.45s cubic-bezier(0, 0, 0.15, 1) alternate infinite
+    margin-left: -14px
+
+
+.asanga__message.asanga__loading span::after 
+    -webkit-animation: ball 0.45s cubic-bezier(0, 0, 0.15, 1) alternate infinite
+    animation: ball 0.45s cubic-bezier(0, 0, 0.15, 1) alternate infinite
+    margin-left: 10px
+    -webkit-animation-delay: 0.3s
+    animation-delay: 0.3s
+
+
+
+@-webkit-keyframes ball 
+  from 
+    -webkit-transform: translateY(0) scaleY(0.8)
+    transform: translateY(0) scaleY(0.8)
+  
+  to 
+    -webkit-transform: translateY(-10px)
+    transform: translateY(-10px)
+  
+
+@keyframes ball 
+  from 
+    -webkit-transform: translateY(0) scaleY(0.8)
+    transform: translateY(0) scaleY(0.8)
+  
+  to 
+    -webkit-transform: translateY(-10px)
+    transform: translateY(-10px)
+  
+
+
+.asanga__kickstart 
+    width: 8em
+    text-align: center
+    white-space: nowrap
+    font-family: 'Trebuchet MS'
+    background: none
+    border: none
+    padding: 0.2em 0.3em
+    outline: none !important
+    resize: none
+    color: rgba(0, 0, 0, 0.7)
+    margin: 0
+    overflow: hidden
+    user-select: none
+    margin-left: 10px
+    border-radius: 6px
+    background: white
+    display: flex
+    align-items: center
+    transition: all 0.2s ease
+    box-shadow: 0px 1px 3px 0px rgba(0,0,0,0.2), 0px 1px 1px 0px rgba(0,0,0,0.14), 0px 2px 1px -1px rgba(0,0,0,0.12)
+
+
+.asanga__kickstart:hover 
+    background: #eee
+
+
+.asanga__kickstart:active 
+    background: #ddd
+
+
+.asanga__kickstart > span 
+    margin: auto
+
+
+.asanga__toggle-mask 
+    height: 100%
+    width: 1.4em
+    padding-left: 0.6em
+    display: none
+    align-items: center
+
+
+.asanga__toggle-mask > svg 
+    height: 100%
+    width: 100%
+
+
+.asanga__masked .asanga__toggle-mask 
+    display: flex
+    
+
+
+.asanga__closed .asanga__kickstart
+    width: 0
+    margin: 0
+    padding: 0
+    transition: none
+    
+
+.asanga__button:hover 
+    background: #e5e5e5
+
+
+.asanga__button:active 
+    background: #d5d5d5
+
+
+.asanga__button:last-child 
+    margin-bottom: 0.4em
+
+
+.asanga__buttons 
+    display: flex
+    flex-direction: column
+    align-items: center
+    min-width: 150px
+    padding: 0 0.5em
+
+
+.asanga__button 
+    padding: 0.2em 0.5em
+    margin-top: 0.3em
+    border-radius: 0.5em
+    cursor: default
+    background: #f5f5f5
+    user-select: none
+    width: 100%
+    display: block
+    position: relative
+    text-align: center
+
+
+.asanga__masked .asanga__textarea 
+    display: none
+
+
+.asanga__masked .asanga__masked_input 
+    display: unset
+
+
+.asanga__masked_input 
+    display: none
+    height: 1em
+
+
+.asanga__reset:hover 
+    background: #fffa
+    opacity: 1
+
+.asanga__reset:active 
+    background: #555a
+
+
+.asanga__reset 
+    font-family: 'Trebuchet MS'
+    position: absolute
+    width: 1.5em
+    height: 1.5em
+    z-index: 1
+    padding: 0.8em
+    margin: 0.4em
+    right: 0
+    opacity: 0
+    border-radius: 100em
+    transition: all 0.2s ease
+    z-index: 1000
+
+
+.asanga__reset:hover .asanga__tooltip 
+    opacity: 1
+
+
+.asanga__tooltip 
+    position: absolute
+    opacity: 0
+    width: 0
+    left: 50%
+    display: flex
+    align-items: center
+    justify-content: center
+    margin-top: 1em
+    pointer-events: none
+    user-select: none
+    transition: all 0.2s ease
+    transition-delay: 0.05s
+
+
+.asanga__tooltip_content 
+    padding: 0.2em 0.4em
+    background: #fff8
+    box-shadow: 0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.12)
+    border-radius: 0.5em
+
+
+.asanga__image 
+    width: 100%
+
+
+.asanga__record-audio 
+    display: none
+    height: 30px
+    width: 30px
+    margin-left: 8px
+    border-radius: 50%
+    background: #7554fc
+    align-items: center
+    padding: 5px
+    -ms-touch-action: none
+    touch-action: none
+    transition: all 0.3s
+    box-sizing: border-box
+    user-select: none
+
+
+.asanga__record-audio-inner 
+    position: relative
+    display: flex
+    height: 100%
+    width: 100%
+    user-select: none
+
+
+.asanga__record-audio-inner:before 
+    content: ""
+    position: absolute
+    width: 100%
+    height: 100%
+    border-radius: 50%
+    transform: scale(3)
+
+
+.asanga__stt_enabled .asanga__record-audio 
+    display: flex
+
+    
+.asanga__record-audio svg 
+    height: 100%
+    fill: white
+    display: inline-block
+    position: relative
+    margin: auto
+
+    
+
+.asanga__record-audio::before 
+    content: "Release to stop"
+    position: absolute
+    z-index: 1000
+    margin-left: 1.8em
+    white-space: nowrap
+    transform: translateX(calc(-100% - 4px)) translateY(0) scale(0.5)
+    opacity: 0
+    background: #fff0
+    color: #000
+    /* border: 2px solid #000  */
+    border-radius: 4px
+    padding: 0.4em 0.8em
+    transition: all 0.3s
+    line-height: 1
+    pointer-events: none
+
+
+@-webkit-keyframes asanga__rotation 
+   from 
+       -webkit-transform: rotate(0deg)
+   to 
+       -webkit-transform: rotate(359deg)
+
+@-moz-keyframes asanga__rotation 
+   from 
+       -moz-transform: rotate(0deg)
+   to 
+       -moz-transform: rotate(359deg)
+
+@-o-keyframes asanga__rotation 
+   from 
+       -o-transform: rotate(0deg)
+   to 
+       -o-transform: rotate(359deg)
+
+@keyframes asanga__rotation 
+   from 
+       transform: rotate(0deg)
+   to 
+       transform: rotate(359deg)
+
+.asanga__record-audio:after 
+    content: ""
+    position: absolute
+    opacity: 0
+    transition: all .3s ease
+    left: calc(50% - 2.2em)
+    height: 60px
+    width: 60px
+    margin: 0px auto
+    -webkit-animation: asanga__rotation .6s infinite linear
+    -moz-animation: asanga__rotation .6s infinite linear
+    -o-animation: asanga__rotation .6s infinite linear
+    animation: asanga__rotation .6s infinite linear
+    border-left: 6px solid rgba(0,174,239,.15)
+    border-right: 6px solid rgba(0,174,239,.15)
+    border-bottom: 6px solid rgba(0,174,239,.15)
+    border-top: 6px solid rgba(0,174,239,.8)
+    border-radius: 100%
+    pointer-events: none
+
+
+    
+.asanga__red.asanga__stopping:after 
+    opacity: 1
+
+
+.asanga__red 
+    background: #ff5858
+    transform: scale(2)
+
+    
+.asanga__red::before
+    -webkit-transform: translateX(calc(-100% - 4px)) translateY(0) scale(0.5)
+     -moz-transform: translateX(calc(-100% - 4px)) translateY(0) scale(0.5)
+      -ms-transform: translateX(calc(-100% - 4px)) translateY(0) scale(0.5)
+          transform: translateX(calc(-100% - 4px)) translateY(0) scale(0.5)
+    opacity: 1
+    background: #fff
+
+
+.asanga__stopping::before
+    content: "Finishing ..."
+
+
+.asanga__bottom ::-webkit-scrollbar 
+  width: 2em
+  border-radius: 1em
+
+
+.asanga__bottom ::-webkit-scrollbar-track 
+  background: #00000000 
+
+ 
+.asanga__bottom ::-webkit-scrollbar-thumb 
+  background: #888 
+  border-radius: 1em
+  border: 0.7em #d6ebff solid
+
+
+/* Handle on hover  */
+.asanga__bottom ::-webkit-scrollbar-thumb:hover 
+  background: #555 
