@@ -90,7 +90,7 @@ class Chatbot extends Component{
                                     </div>
                                 )) :
                                 <div className={prefixCls("message ") + prefixCls("new")}>
-                                    Testing
+                                    Testing123
                                 </div>                               
                                 }
                             </div>
